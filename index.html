@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    html , body{
+		    	    margin:0 ; padding: 0 ; width:100% ; height:100% ;
+		    }
+		    body{	    	   
+		    	    background: -webkit-linear-gradient(top , #87cefa , white) no-repeat; 
+		    }
+		    div#beijing{
+		    	    width:400px ; height:250px ; padding:0 10px 0 10px ;
+		    	    background: gray;
+		    	    border-radius:1em ; 
+		    	    position:absolute ; left:50% ; top:50% ; margin: -125px 0 0 -200px ;
+		    	    filter: alpha(opacity=40);
+		    	    opacity:0.4 ;
+		    }
+		    div#denglu{
+		    	    width:400px ; height:250px ; padding:0 10px 0 10px ;
+		    	    border-radius:1em ; color:white ;
+		    	    position:absolute ; left:50% ; top:50% ; margin: -125px 0 0 -200px ;
+		    }
+		    h2{
+		    	    text-align: center;  
+		    	    margin-top:30px ; 
+		    }
+		    h4{ 
+		    	    text-align: center; 
+		    	    float:right ; margin-top:0 ;
+		    }
+		    div#denglu div{
+		    	    width:300px ; height:50px ;  background: -webkit-linear-gradient(left ,  gainsboro , rgb(162 , 180 , 191) ) no-repeat; 
+		    	    margin:15px auto ; border-radius: 0.5em;  
+		    	    clear:both ;
+		    }
+		    div#denglu div:hover{
+		    	    background: ghostwhite; 
+		    }
+		    div#denglu div:hover img{
+		    	    filter: alpha(opacity = 70);
+		    	    opacity:0.7 ;
+		    }
+		    div#xiangmu a{
+		    	    line-height: 50px; text-decoration: none ; color:white ;
+		    }
+		    div#xiangmu a:hover{
+		    	    text-decoration:underline ;
+		    }
+		    div#tubiao a{
+		    	    line-height: 62px;
+		    }
+		    div#denglu div:hover a{
+		    	    color:gray ;
+		    }
+ 		    div#xiangmu a:first-child{
+		    	    padding-left:30px ; background: url(book/01.png) no-repeat 0 50%;
+		    	    background-size: 25px 25px;
+		    }
+		    img{
+		    	    width:35px ; height:30px ;  
+		    	    filter: alpha(opacity = 50);
+		    	    opacity:0.5 ;
+		    }
+		    div#denglu div:hover img:hover{
+		    	    filter: alpha(opacity = 100);
+		    	    opacity:1 ;
+		    }
+		    img:first-child{
+		    	    width:25px ; height:25px ; 
+		    }
+		    h2 , div#touxiang{
+		    	    display: inline-block; 
+		    }
+		    div#denglu div#touxiang , div#denglu div#touxiang img{
+		    	    width:35px ; height:35px ; background: none; 
+		    }
+		    div#denglu div#toubu{
+		    	    text-align: center; width:100% ; 
+		    	    background: none; margin: 0 0 15px 0 ;
+		    }
+		</style>
+	</head>
+	<body>
+		<div id = "beijing"></div>
+		<div id = "denglu">
+			<div id = "toubu">
+			<h2>Eudemonia的小站</h2>			
+			<div id = "touxiang">
+				<img src = "book/touxiang.png" width = "35px" height = "35px" />
+			</div>
+			</div>
+			
+			<h4>你必须很努力,才能看起来毫不费力...</h4>
+			
+			<div id = "xiangmu">
+			     <a href = "book.html">博客</a>
+			     <a href = "http://www.baidu.com">推荐</a>
+			     <a href = "http://www.baidu.com">实验</a>
+			     <a href = "http://www.baidu.com">关于</a>
+			</div>
+			<div id = "tubiao">
+				<a><img src = "book/01.png"/></a>
+				<a href = "https://www.zhihu.com/people/yang-yang-45-69"><img src = "book/02.png"/></a>
+				<a href = "weixin.html"><img src = "book/03.png"/></a>
+				<a href = "http://www.weibo.com/1993122zhaojianyi/profile?rightmod=1&wvr=6&mod=personnumber"><img src = "book/04.png"/></a>
+				<a href = "http://www.baidu.com"><img src = "book/05.png"/></a>
+				<a href = "http://www.baidu.com"><img src = "book/06.png"/></a>
+				
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>博客主页</title>
+		<style>
+			html,body{
+				width:100%;
+				height:100%
+			}
+			body{
+				margin:0 ;
+				padding:0 ;
+			}
+			a{
+				text-decoration: none;
+				color:cornflowerblue;
+			}
+			div#wrap{
+				width:1000px;
+				height:100%;
+				margin:25px auto;
+			}
+			div#ding{
+
+			}
+			div#left{
+				float:left ;
+				width:650px;
+				height:100% ;
+				margin-right:2%;
+			}
+			div#right{
+				float:left ;
+				width:300px ;
+				height:100%;
+				background: gainsboro;
+			}
+			div#zuixin{
+				border-radius: 8px;
+				background:ghostwhite;
+			}
+			div#jianjie{
+				margin:0 20px ;
+				padding:20px 0;
+				width:610px;
+				border-bottom:dashed 1px gray;
+			}
+			div#jL{
+				width:450px ;
+				display: inline-block;
+			}
+			div#jL p{
+				text-indent: 32px;
+			}
+			div#jianjie img{
+				margin-top:30px ;
+                float:right;
+			}
+			div#xinxi{
+				margin:0 20px ;
+				padding:10px 0 ;
+				width:610px ;
+			}
+			div#liebiao{
+				margin-top: 30px;
+			}
+			div#liebiao div:first-child{
+				width:580px ;
+				border-bottom: dashed 1px gray;
+				padding-bottom:15px;
+			}
+			div#liebiao div:first-child h2{
+				display: inline;
+			}
+			div#liebiao div:first-child a{
+				float:right ;
+			}
+			li{
+				margin:15px 0px 5px 10px ;
+				font-size: 10px;
+				color:gray;
+				font-family:Arial;
+				font-weight:bold;
+			}
+			li a{
+				font-size:18px ;
+			}
+			li i{
+				font-size: 14px;
+			}
+
+		</style>
+		<script src = "ajax.js"></script>
+
+		<script>
+			window.onload = function(){
+				var oJl = document.getElementById('jL');
+				var oJj = document.getElementById('jianjie');
+				var oXin = document.getElementById('xinxi');
+				var oUl = document.getElementById('wenzhang');
+				var arr = [] ;
+
+				ajax('get','huoqushuju/huoqu.php','act=get',
+						function(data) {
+							var arrx = JSON.parse(data);
+
+							for (var i = 0; i < arrx.length; i++) {
+
+								arr.push(JSON.parse(arrx[i]));
+							}
+
+							var oGen = arr[0] ;
+							var oTi = document.createElement('a');
+							var oTh1 = document.createElement('h2');
+							var oP = document.createElement('p');
+							var oPa = document.createElement('a');
+							var oImg = oJj.getElementsByTagName('img')[0];
+							var oI = oXin.getElementsByTagName('i')[0];
+
+							oTi.href = 'wenzhangyangban/yangban.html' ;
+							oTh1.innerHTML = oGen.timu ;
+							oTi.appendChild(oTh1);
+							oJl.appendChild(oTi);
+
+							oP.innerHTML = oGen.content ;
+							oPa.innerHTML = '阅读全文 »'
+							oPa.href = 'wenzhangyangban/yangban.html';
+							oJl.appendChild(oP);
+							oJl.appendChild(oPa);
+
+							oImg.src = oGen.img ;
+							oImg.style.width = 140 + 'px';
+
+							oI.innerHTML =  oGen.posttime ;
+
+							for(var j = 0 ; j <12 ; j++ ){
+								var oLi = document.createElement('li');
+								var oS = arr[j].posttime ;
+								var oA = arr[j].timu ;
+
+								oLi.innerHTML = '<i>'+oS+'</i>' + ' »' + ' <a>'+oA+'</a>' + ' <em>0</em>'+' 条评论' ;
+								oUl.appendChild(oLi);
+							}
+							    var oLi = document.createElement('li') ;
+							    oLi.innerHTML = '<a href = "">更多文章...</a>' ;
+                                oUl.appendChild(oLi);
+						}
+				);
+
+
+			};
+		</script>
+
+	</head>
+	<body>
+	    <div id = wrap>
+			<div id = "ding">
+				<h1><a href = "index.html">Eudemonia</a> » 博客</h1>
+			</div>
+			<div id = "left">
+				 <div id = "zuixin">
+					 <div id = "jianjie">
+						 <div id = "jL"></div>
+						 <img />
+					 </div>
+					 <div id = "xinxi">
+						 <p>Posted by <a href = "index.html">Eudemonia</a>  at <a href = "">观点和感想</a> on <i></i> <em>0</em>条评论</p>
+					 </div>
+				 </div>
+				<div id = "liebiao">
+					<div>
+						<h2>近期文章</h2></em><a href = " ">博客归档 »</a>
+					</div>
+					<div>
+						<ul id = "wenzhang">
+						</ul>
+					</div>
+				</div>
+				<div id = "liuyan">
+
+				</div>
+
+			</div>
+			<div id = "right"></div>
+		</div>
+	</body>
+</html>

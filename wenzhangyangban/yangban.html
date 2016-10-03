@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src = "../ajax.js"></script>
+    <script>
+
+        // 输出 ic h1 h4 img
+
+        window.onload  = function(){
+            var ic = 14 ;
+            var oH1 = document.getElementsByTagName('h1')[0];
+            var oH4 = document.getElementsByTagName('h4')[0];
+            var oImg = document.getElementsByTagName('img')[0];
+            var oImgs = oImg.src ;
+
+
+
+            ajax('post','wenzhang.php','ic='+ic+'&timu='+oH1.innerHTML+'&content='+oH4.innerHTML+'&img='+oImgs,
+                    function(data){
+
+            });
+        };
+    </script>
+
+</head>
+<body>
+    <h1>如何做好一名实习生</h1>
+    <h4>最近看到有几个同事准备着转正，想借此机会聊一下实习生相关的话题——如何成为一名优秀的实习生。</h4>
+    <img src = "../tupian/wenzhang/01.jpg">
+
+    <h3>公司为什么需要实习生</h3>
+    <p> 如果你认为公司招聘实习生，就是为了攫取优质的廉价劳动力，随意安排些杂七杂八的琐碎事，那可就大错特错了。</p>
+    <p> 公司人才入口一般有两个渠道，社招和校招。社招成本向来都很高，得花大价钱好不容易抓来一个资深人士，搞不好还是一根「老油条」；
+        而学生不太一样,没有经过太多外界文化的洗礼，大部分成天在大学里泡着电脑，打字速度和编程能力都是相当的可以，这类同学稍加培育，
+        摇身一变就能成为专业人士.
+    </p>
+    <p>要知道，熟悉公司的环境是需要一段时间的。在这段时间里，公司对待实习生和社招人员的要求和态度不太一样，前者可以潜心钻研技术并且融入
+        公司环境，而后者除了需要融入环境，还要承担业务的压力，两者对比效果可想而知。在实习过程中，公司可以通过观察实习生的品质、能力和其他
+        综合能力，从而决定实习生的去留，整个抉择还是比较果断的；但是对社招人员，劝退一个人的成本很高。</p>
+    <p>需要注意的是，将实习生当临时工/兼职工的公司也是存在的，同学们需要擦亮双眼，好好甄别。</p>
+</body>
+</html>
