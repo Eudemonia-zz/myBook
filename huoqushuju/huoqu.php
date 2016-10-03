@@ -33,7 +33,7 @@ switch ($_GET['act']){
 // 获取文章库:
         //返回:$data : json(ID:文章)
         $sql = 'SELECT ic , timu , content , img ,posttime , id FROM message ORDER BY id DESC';
-        $net = mysqli_connect('localhost','root','','wenzhang');
+        $net = mysqli_connect('localhost','a1003160630','c275c086','a1003160630');
         $res = mysqli_query($net , $sql);
         $datax = Array();
         while($row = mysqli_fetch_row($res)){

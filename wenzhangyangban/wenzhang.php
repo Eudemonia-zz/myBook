@@ -40,7 +40,7 @@ $t =  time() ; // data('y:m:d',time()); 这里用数据的方式
 
 #检查数据库
 $sqlx = "SELECT ic FROM message";
-$mesx = mysqli_connect('localhost','root','','wenzhang');
+$mesx = mysqli_connect('localhost','a1003160630','c275c086','a1003160630');
 $res = mysqli_query($mesx,$sqlx);
 while($row = mysqli_fetch_row($res)){
     if($row[0] == $oDa->ic){
